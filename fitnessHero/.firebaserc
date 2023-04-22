@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fitness-hero-aaf9c": {
+      "hosting": {
+        "fitnessHero": [
+          "fitness-hero-aaf9c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fitness-hero-aaf9c"
+  }
+}
