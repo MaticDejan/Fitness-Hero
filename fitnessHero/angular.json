@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "fitnessHero:build:production",
+            "firebaseProject": "fitness-hero-aaf9c",
+            "firebaseHostingSite": "fitness-hero-aaf9c"
+          }
         }
       }
     }
