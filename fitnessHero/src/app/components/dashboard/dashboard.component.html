@@ -1,51 +1,33 @@
-<!-- Top navigation -->
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0">
-    <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
-  </a>
-</nav>
-<!-- Sidebar navigation -->
-<div class="container-fluid">
-  <div class="row">
-    <nav class="col-md-2 d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active">
-              <i class="fas fa-user"></i>User Profile
-            </a>
-          </li>
-          <!-- Calling SignOut() Api from AuthService -->
-          <li class="nav-item">
-            <a class="nav-link" (click)="authService.SignOut()">
-              <i class="fas fa-sign-out-alt"></i>Log out
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="inner-adjust">
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">User Profile</h1>
-        </div>
-        <!-- Show user data when logged in -->
-        <div class="row" *ngIf="authService.userData as user">
-          <div class="col-md-12">
-            <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                   alt="{{user.displayName}}">
-              <div class="media-body">
-                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
-                <p>Email: <strong>{{user.email}}</strong></p>
-                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+<div
+  class="flex justify-center h-[100vh] w-[100vw] bg-background bg-no-repeat bg-cover bg-center bg-fixed">
+  <img class="absolute h-full w-full" src="assets/images/lights.gif">
+  <div class="bg-c2/[.60] text-c1 p-8 z-50 m-auto text-center rounded">
+    <div class="text-[32px]">User Profile</div>
+    <div class="mt-4 flex flex-col justify-center items-center" *ngIf="authService.userData as user">
+      <img class="h-24 w-24 rounded-full mb-2"
+           src="{{(user.photoURL) ? user.photoURL : '/assets/images/dummy-user.png'}}"
+           alt="{{user.displayName}}">
+      <div class="mb-2">Hello: <strong>{{(user.displayName) ? user.displayName : 'UserModel'}}</strong></div>
+      <div class="mb-2">UserModel ID: <strong>{{user.uid}}</strong></div>
+      <div class="mb-2">Email: <strong>{{user.email}}</strong></div>
+      <div class="mb-2">Email Verified: <strong>{{user.emailVerified}}</strong></div>
+    </div>
+
+    <div class="flex justify-between mt-4">
+      <button class="bg-c6 flex justify-center gap-2 p-2" (click)="authService.SignOut()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+             class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/>
+        </svg>
+        Log out
+      </button>
+
+      <button class="text-c4 flex justify-center gap-2 p-2" routerLink="/home">
+        Go Home
+      </button>
+
+    </div>
   </div>
 </div>
+

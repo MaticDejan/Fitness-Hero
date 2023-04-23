@@ -1,53 +1,38 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-      <div class="formGroup">
+<div
+  class="flex justify-center h-[100vh] w-[100vw] bg-background bg-no-repeat bg-cover bg-center bg-fixed">
+  <img class="absolute h-full w-full" src="assets/images/lights.gif">
+  <div class="bg-c2/[.60] text-c1 p-8 z-50 m-auto text-center rounded">
+    <div class="text-[32px]">Sign Up</div>
+    <div class="flex flex-col my-4 gap-2">
+      <app-fieldset-input label="Email Address">
         <input
           type="email"
-          class="formControl"
-          placeholder="Email Address"
+          class="sign-up-input"
           #userEmail
           required
         />
-      </div>
-      <div class="formGroup">
-        <input
-          type="password"
-          class="formControl"
-          placeholder="Password"
-          #userPwd
-          required
-        />
-      </div>
-      <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Sign Up"
-          (click)="authService.SignUp(userEmail.value, userPwd.value)"
-        />
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button
-          type="button"
-          class="btn googleBtn"
-          (click)="authService.GoogleAuth()"
-        >
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
+      </app-fieldset-input>
+      <app-fieldset-input label="Password">
+        <input type="password" class="sign-up-input" #userPassword required>
+      </app-fieldset-input>
     </div>
-    <div class="redirectToLogin">
-      <span
-      >Already have an account?
-        <span class="redirect" routerLink="/sign-in">Log In</span></span
-      >
+    <button class="bg-c6 w-full py-1" (click)="authService.SignUp(userEmail.value, userPassword.value)">Sign Up</button>
+    <div class="flex items-center justify-center w-full mt-4">
+      <div class="h-[1px] w-2/5 bg-c1"></div>
+      <div class="w-1/5">OR</div>
+      <div class="h-[1px] w-2/5 bg-c1"></div>
+    </div>
+    <button type="button" class="flex items-center justify-center gap-2 w-full my-4" (click)="authService.GoogleAuth()">
+      <svg class="h-8 w-8 text-c6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+           fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z"/>
+        <path d="M17.788 5.108A9 9 0 1021 12h-8"/>
+      </svg>
+      Continue with Google
+    </button>
+    <div class="flex gap-2 mt-2">
+      <div>Already have an account?</div>
+      <button class="text-c4" routerLink="/sign-in">Log In</button>
     </div>
   </div>
 </div>
