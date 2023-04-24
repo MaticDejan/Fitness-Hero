@@ -16,7 +16,7 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireModule} from "@angular/fire/compat";
-import {environment} from "../environment/environment";
+import {environment} from "../environments/environment";
 import {FieldsetInputComponent} from './shared/components/fieldset-input/fieldset-input.component';
 
 @NgModule({
