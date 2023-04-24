@@ -1,1 +1,10 @@
-<p>home works well!</p>
+<div class="flex items-center flex-col bg-c2 h-[100vh] w[[100vw]">
+  <div class="text-c1 mt-[50px] mb-[25px]">
+    Choose <span class="text">your hero</span>
+  </div>
+  <div class="flex wrap">
+    <div *ngFor="let hero of heroes">
+      <app-card [hero]="hero" [powerColor]="'c4'"></app-card>
+    </div>
+  </div>
+</div>

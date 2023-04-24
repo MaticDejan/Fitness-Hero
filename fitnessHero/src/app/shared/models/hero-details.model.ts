@@ -1,5 +1,5 @@
 export interface HeroDetailsModel {
-  id: string;
+  key: string | null;
   name: string;
   power: string;
   imgUrl: string;

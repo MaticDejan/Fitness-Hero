@@ -1,6 +1,6 @@
 export interface HeroModel {
-  id: string;
-  name: string;
-  imgUrl: string;
-  power: string;
+  key?: string | null;
+  name?: string;
+  imgUrl?: string;
+  power?: string;
 }
