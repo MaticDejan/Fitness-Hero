@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HeroModel} from "../../shared/models/hero.model";
 import {HeroService} from "../../shared/services/hero.service";
-import {AngularFireList} from "@angular/fire/compat/database";
 import {map} from "rxjs";
+import {HeroPowerColorService} from "../../shared/services/hero-power-color.service";
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import {map} from "rxjs";
 export class HomeComponent implements OnInit {
   public heroes?: HeroModel[];
 
-  constructor(private heroService: HeroService) {
+  constructor(private readonly heroService: HeroService, public readonly heroPowerColorService: HeroPowerColorService) {
   }
 
   ngOnInit() {
