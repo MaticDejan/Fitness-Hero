@@ -13,8 +13,8 @@ import {inmatriculareModel} from "../../shared/models/inmatriculare.model";
 })
 export class HomeComponent implements OnInit{
   public nrInmat: inmatriculareModel[]= [];
+  public maxCapacity: number = 50;
   constructor(private inmatriculareService: InmatriculareService){
-
   }
   ngOnInit() {
     this.inmatriculareService.getAll()!.snapshotChanges().pipe(

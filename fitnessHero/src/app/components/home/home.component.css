@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  font-size:25px;
 }
 .card {
   text-align: center;
@@ -26,9 +27,11 @@
 }
 .nrInmatricul{
   opacity: 0.65;
+  font-size:25px;
 }
 .form-control{
   border-radius: 10px;
   width: 450px;
+  font-size:25px;
 }
 

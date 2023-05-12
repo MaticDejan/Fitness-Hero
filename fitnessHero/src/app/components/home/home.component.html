@@ -4,7 +4,8 @@
     <div>
       <form (submit)="onSubmit()">
         <div class="form-group space">
-          <div>{{nrInmat.length}} masini se afla in parcare din totalul de 50 de locuri disponibile</div>
+          <div>{{nrInmat.length}} masini se afla in parcare din totalul de {{maxCapacity}} de locuri disponibile. In acest moment in parcare
+          sunt {{maxCapacity - nrInmat.length}} locuri disponibile</div>
           <input class="form-control description" [formControl]= "nrInmatriculare" placeholder="Numar de inmatriculare">
         </div>
         <div class="row space">
