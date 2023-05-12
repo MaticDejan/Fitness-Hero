@@ -1,1 +1,20 @@
-<p>home works well!</p>
+<div class="container">
+
+  <div class="card" style="width: 25rem">
+    <div class="card-body">
+      <form (submit)="onSubmit()">
+        <div class="form-group space">
+          <input class="form-control description" [formControl]= "nrInmatriculare" placeholder="nrInmatriculare">
+        </div>
+        <div class="row space">
+
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-success full">Submit</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+  <div *ngFor="let nr of nrInmat">{{nr.nrInmatriculare}}</div>
+</div>
