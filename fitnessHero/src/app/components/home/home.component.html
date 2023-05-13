@@ -16,6 +16,18 @@
 
         </div>
       </form>
+      <form (submit)="onSubmitCap()">
+        <div class="form-group space">
+          <input class="form-control description" [formControl]= "maxCap" placeholder="Capacitate maxima">
+        </div>
+        <div class="row space">
+
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-success full">Trimite</button>
+          </div>
+
+        </div>
+      </form>
     </div>
   </div>
   <div class="container nrInmatricul" *ngFor="let nr of nrInmat">Numar de inmatriculare: {{nr.nrInmatriculare}}</div>

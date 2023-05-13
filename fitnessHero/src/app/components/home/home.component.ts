@@ -13,7 +13,7 @@ import {inmatriculareModel} from "../../shared/models/inmatriculare.model";
 })
 export class HomeComponent implements OnInit{
   public nrInmat: inmatriculareModel[]= [];
-  public maxCapacity: number = 50;
+  public maxCapacity: number = 15;
   constructor(private inmatriculareService: InmatriculareService){
   }
   ngOnInit() {
@@ -27,9 +27,10 @@ export class HomeComponent implements OnInit{
       this.nrInmat = data;
       console.log(data)
     });
-
+    //this.maxCapacity=this.inmatriculareService.getNr();
   }
     public nrInmatriculare = new FormControl('', Validators.required)
+    public maxCap = new FormControl('', Validators.required)
 
 
   public onSubmit() {
@@ -37,6 +38,13 @@ export class HomeComponent implements OnInit{
     this.inmatriculareService.post(this.nrInmatriculare.value)
 
   }
+
+  public onSubmitCap() {
+    console.log(this.nrInmatriculare.value);
+    this.inmatriculareService.postNumber(this.maxCap.value);
+
+  }
+
 }
 
 
