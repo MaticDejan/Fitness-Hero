@@ -4,25 +4,27 @@
     <div>
       <form (submit)="onSubmit()">
         <div class="form-group space">
-          <div>{{nrInmat.length}} masini se afla in parcare din totalul de {{maxCapacity}} de locuri disponibile. In acest moment in parcare
-          sunt {{maxCapacity - nrInmat.length}} locuri disponibile</div>
+          <div>
+            Bine ati venit in parcarea noastra. Prin formularul de mai jos, puteti adauga numere de inmatriculare in baza de date si puteti
+            modifica capacitatea maxima a parcarii.In acest moment sunt inregistrate {{nrInmat.length}} masini .
+          </div>
           <input class="form-control description" [formControl]= "nrInmatriculare" placeholder="Numar de inmatriculare">
         </div>
         <div class="row space">
 
-          <div class="form-group col-md-6">
-            <button type="submit" class="btn btn-success full">Trimite</button>
+          <div class="trimite">
+            <button  type="submit" class="btn btn-success full">Trimite</button>
           </div>
 
         </div>
       </form>
       <form (submit)="onSubmitCap()">
         <div class="form-group space">
-          <input class="form-control description" [formControl]= "maxCap" placeholder="Capacitate maxima">
+          <input value="15" class="form-control description" [formControl]= "maxCap" placeholder="Capacitate maxima">
         </div>
         <div class="row space">
 
-          <div class="form-group col-md-6">
+          <div class="trimite">
             <button type="submit" class="btn btn-success full">Trimite</button>
           </div>
 

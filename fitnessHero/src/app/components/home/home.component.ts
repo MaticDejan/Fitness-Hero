@@ -45,6 +45,10 @@ export class HomeComponent implements OnInit{
 
   }
 
+  deleteNumar(nr : any) {
+    this.inmatriculareService.deleteNumarInmatriculare(nr);
+  }
+  //<button class="btn btn-danger" (click)="deleteNumar(nr)">Delete</button>
 }
 
 

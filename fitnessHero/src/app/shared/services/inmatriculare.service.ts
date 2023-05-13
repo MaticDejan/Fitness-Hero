@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from "@angular/fire/compat/database";
 import {getDatabase, push, ref, set,onValue} from "firebase/database";
 import {inmatriculareModel} from "../models/inmatriculare.model";
+import { doc, deleteDoc } from "firebase/firestore";
+import {Firestore} from "@angular/fire/firestore";
+
+
+
 
 
 @Injectable({
@@ -45,6 +50,10 @@ export class InmatriculareService {
     set(newPostRef, {
       maxCapacity: nr,
     });
+  }
+ async deleteNumarInmatriculare(nr: any) {
+    const db = getDatabase();
+     await deleteDoc(doc(<Firestore><unknown>db, this.dbPath,nr.value));
   }
 
 }
