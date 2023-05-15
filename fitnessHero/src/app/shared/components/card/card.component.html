@@ -1,7 +1,7 @@
 <div class="w-[190px] h-[320.63px] flex rounded-lg mx-[12px] my-[9px]">
   <div class="absolute w-[190px] h-[320.63px] bg-c2/[.60] rounded-lg text-c1">
     <div class="absolute text-2xl leading-7 font-bold ml-[8px] bottom-[36px]">{{hero?.name}}</div>
-    <div class="absolute text-base leading-5 ml-[8px] bottom-[17px]">Power: <span class="text-base text-{{powerColor}} leading-5">{{hero?.power}}</span></div>
+    <div class="absolute text-base leading-5 ml-[8px] bottom-[17px]">Power: <span class="text-base {{powerTextColor}} leading-5">{{hero?.power}}</span></div>
   </div>
   <img class="object-cover rounded-lg" *ngIf="hero?.imgUrl" src="{{hero?.imgUrl}}">
 </div>
