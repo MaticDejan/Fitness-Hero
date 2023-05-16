@@ -10,16 +10,16 @@ export class HeroPowerColorService {
   colorPicker(power: string | undefined) {
     if(typeof power === "string") {
       if (power.toLowerCase() === 'bodybuilding') {
-        return 'c6';
+        return 'text-c6';
       } else if (power.toLowerCase() === 'healthy life') {
-        return 'c4';
+        return 'text-c4';
       } else if (power.toLowerCase() === 'bulking') {
-        return 'c5';
+        return 'text-c5';
       } else {
-        return 'c3';
+        return 'text-c3';
       }
     } else {
-      return 'c3';
+      return 'text-c3';
     }
   }
 }

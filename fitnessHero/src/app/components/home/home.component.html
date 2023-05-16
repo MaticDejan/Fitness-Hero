@@ -4,7 +4,7 @@
   </div>
   <div class="flex wrap">
     <div *ngFor="let hero of heroes">
-      <app-card [hero]="hero" [powerColor]="this.heroPowerColorService.colorPicker(hero.power)"></app-card>
+      <app-card [hero]="hero" [powerTextColor]="this.heroPowerColorService.colorPicker(hero.power)"></app-card>
     </div>
   </div>
 </div>
