@@ -8,5 +8,5 @@ import {HeroModel} from "../../models/hero.model";
 })
 export class CardComponent {
   @Input() hero?: HeroModel;
-  @Input() powerColor?: string;
+  @Input() powerTextColor?: string;
 }
