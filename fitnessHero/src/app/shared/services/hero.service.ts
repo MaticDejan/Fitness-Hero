@@ -13,7 +13,7 @@ export class HeroService {
     this.heroesRef = db.list(this.dbPath);
   }
 
-  getAll(): AngularFireList<HeroModel> {
+  getAllHeroes(): AngularFireList<HeroModel> {
     return this.heroesRef;
   }
 }
