@@ -1,0 +1,13 @@
+<div class="bg-c2" *ngIf="hero; else elseBlock">
+  <img class="w-full h-[212px] relative object-cover" src="{{hero.backgroundUrl}}">
+  <img class="absolute w-[32px] h-[32px] left-[12px] top-[18px] rounded-full" (click)="redirect()"
+       src="../../../assets/images/back-arrow.jpeg">
+  <div class="flex justify-center relative w-full -top-[130px]">
+      <img class="absolute w-[118px] h-[118px] object-cover rounded-full"
+           src="{{hero!.avatarUrl}}">
+  </div>
+  <div class="absolute right-[12px] top-[16px]">
+    <div (click)="logOut()"> Logout</div>
+  </div>
+</div>
+<ng-template class="bg-c2 text-c1" #elseBlock>Loading...</ng-template>

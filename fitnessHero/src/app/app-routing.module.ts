@@ -7,6 +7,7 @@ import {SignUpComponent} from "./components/sign-up/sign-up.component";
 import {ForgotPasswordComponent} from "./components/forgot-password/forgot-password.component";
 import {VerifyEmailComponent} from "./components/verify-email/verify-email.component";
 import {AuthGuard} from "./shared/guard/auth.guard";
+import {DetailsComponent} from "./components/details/details.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'sign-up', component: SignUpComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'verify-email', component: VerifyEmailComponent},
+  {path: ':key', component: DetailsComponent},
   {path: '', redirectTo: '/sign-in', pathMatch: 'full'},
 ];
 
