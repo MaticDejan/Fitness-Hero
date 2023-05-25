@@ -1,4 +1,4 @@
-<div class="bg-c2" *ngIf="hero; else elseBlock">
+<div class="bg-c2 h-full w-screen text-c1 " *ngIf="hero; else elseBlock">
   <img class="w-full h-[212px] relative object-cover" src="{{hero.backgroundUrl}}">
   <img class="absolute w-[32px] h-[32px] left-[12px] top-[18px] rounded-full" (click)="redirect()"
        src="../../../assets/images/back-arrow.jpeg">
@@ -8,6 +8,29 @@
   </div>
   <div class="absolute right-[12px] top-[16px]">
     <div (click)="logOut()"> Logout</div>
+  </div>
+  <div>
+    <div class="row">
+      <div class="column">
+        <div class="welcome-text">Welcome to</div>
+        <div class="welcome-text">{{hero!.name}}!</div>
+      </div>
+      <div class="column">
+        <div class="level-text">Power:</div>
+        <div class="level-text">{{hero!.power}}</div>
+      </div>
+    </div>
+    <div>
+      <div class="bio-title">Story</div>
+      <app-text-container [text]="hero!.story" [containerColor]="'#333333'"></app-text-container>
+      <div class="row">
+        <app-text-container [text]="hero!.age + ' years old'" [containerColor]="'#333333'"></app-text-container>
+        <app-text-container [text]="'Weight: ' + hero!.weight+' kg'" [containerColor]="'#333333'"></app-text-container>
+      </div>
+    </div>
+    <div class="button-container">
+      <app-text-container (click)="goTo()" [text]="'Reshape Yourself'" [containerColor]="'#32B4CC'"></app-text-container>
+    </div>
   </div>
 </div>
 <ng-template class="bg-c2 text-c1" #elseBlock>Loading...</ng-template>

@@ -45,4 +45,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   logOut() {
     this.authService.SignOut();
   }
+  goTo() {
+    this.r.navigate([`/home/`]);
+  }
 }

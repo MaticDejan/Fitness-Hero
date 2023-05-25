@@ -19,6 +19,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import {FieldsetInputComponent} from './shared/components/fieldset-input/fieldset-input.component';
 import {DetailsComponent} from "./components/details/details.component";
+import { TextContainerComponent } from './shared/components/text-container/text-container.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {DetailsComponent} from "./components/details/details.component";
     ForgotPasswordComponent,
     VerifyEmailComponent,
     FieldsetInputComponent,
-    DetailsComponent
+    DetailsComponent,
+    TextContainerComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
