@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {map, Subscription} from "rxjs";
 import {HeroService} from "../../shared/services/hero.service";
 import {AuthService} from "../../shared/services/auth.service";
+import {HeroPowerColorService} from "../../shared/services/hero-power-color.service";
 
 @Component({
   selector: 'app-details',
@@ -15,7 +16,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   public hero?: any;
 
   constructor(private readonly heroService: HeroService, private readonly route: ActivatedRoute,
-              private readonly authService: AuthService, private readonly r: Router) {
+              private readonly authService: AuthService, private readonly r: Router, public readonly heroPowerColorService: HeroPowerColorService ) {
   }
 
   ngOnInit() {

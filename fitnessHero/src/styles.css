@@ -8,3 +8,17 @@
 * {
   font-family: 'Raleway', sans-serif;
 }
+app-text-container.button{
+  .container{
+    @apply px-[24px];
+  }
+  .content{
+    @apply text-c2;
+  }
+
+}
+app-text-container.logOut{
+  .content{
+    @apply text-c2;
+  }
+}
