@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {HeroModel} from "../../models/hero.model";
 
 @Component({
   selector: 'app-card',
@@ -7,6 +6,9 @@ import {HeroModel} from "../../models/hero.model";
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() hero?: HeroModel;
+  @Input() hero?: any;
   @Input() powerTextColor?: string;
+  @Input() backgroundColor?: string;
+
+  hovered = false;
 }

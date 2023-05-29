@@ -17,6 +17,7 @@ module.exports = {
       c5: '#9BCC32',
       c6: '#CC4432',
       c7: '#1E1E1E',
+      c8: '#333333',
     }
   },
   plugins: [],

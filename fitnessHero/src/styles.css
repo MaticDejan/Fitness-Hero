@@ -7,18 +7,61 @@
 
 * {
   font-family: 'Raleway', sans-serif;
+  cursor: pointer;
 }
-app-text-container.button{
-  .container{
+
+body {
+  background-color: black;
+}
+
+.mat-mdc-checkbox label {
+  @apply text-c1 !important;
+}
+
+app-text-container.button {
+  .container {
     @apply px-[24px];
   }
-  .content{
-    @apply text-c2;
+  .content {
+    @apply text-c2 font-semibold;
+  }
+}
+
+app-text-container.logOut {
+  .content {
+    @apply text-c2 font-semibold;
+  }
+}
+
+app-text-container.progress-day {
+  .container {
+    @apply flex justify-center;
   }
 
-}
-app-text-container.logOut{
-  .content{
-    @apply text-c2;
+  .content {
+    @apply text-xl font-semibold leading-6;
   }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mdc-checkbox__background {
+  @apply h-[25px] w-[25px] bg-c8 rounded-full !important;
+}
+
+.mdc-linear-progress__buffer {
+  @apply h-[50px] !important;
+}
+
+.mdc-linear-progress__buffer-bar {
+  @apply h-[50px] !important;
+}
+
+.mat-mdc-progress-bar {
+  @apply h-[16px] rounded-lg !important;
+}
+
+.mdc-linear-progress__bar-inner {
+  border-top-width: 16px !important;
 }

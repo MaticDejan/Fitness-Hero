@@ -1,0 +1,56 @@
+<div class="px-[31px] py-[42px] text-c1" *ngIf="authService.userData as user">
+  <div class="flex justify-between gap-4 w-full">
+    <div class="w-[1/2] min-h-[287px] flex flex-col justify-between">
+      <div>
+        <div class="font-semibold text-xl leading-7 mb-2">
+          Welcome back,
+        </div>
+        <div class="font-semibold text-2xl leading-7">
+          {{user?.displayName}}
+        </div>
+
+        <div class="mt-[36px]">
+          <app-text-container class="progress-day" [text]="'Day ' + training?.day + ' 🥇'"
+                              [containerColor]="'#333333'"></app-text-container>
+        </div>
+        <div class="mt-[36px]">
+          <app-text-container [text]="'WakeUp at 10 AM'" [containerColor]="'#333333'"></app-text-container>
+        </div>
+      </div>
+      <div class="font-medium text-lg leading-7">
+        Progress
+      </div>
+    </div>
+    <img class="w-[1/2] h-[287px] object-cover rounded-lg" src="{{hero?.imgUrl}}">
+  </div>
+
+  <div class="my-[24px]">
+    <mat-progress-bar
+      [color]="color"
+      [mode]="mode"
+      [value]="value"
+    >
+    </mat-progress-bar>
+  </div>
+
+  <div class="mb-[6px] font-medium text-lg leading-7">
+    Duty List
+  </div>
+
+  <div *ngFor="let exercise of training?.exercises">
+    <mat-checkbox (change)="addProgress($event)">
+      {{exercise}}
+    </mat-checkbox>
+  </div>
+
+  <div class="pt-[28px] flex justify-center gap-8">
+    <app-text-container *ngIf="!completed" class="button" (click)="submit()" [text]="'Submit'"
+                        [containerColor]="'#32B4CC'"></app-text-container>
+    <app-text-container *ngIf="completed" class="button" (click)="submit()" [text]="'Redo'"
+                        [containerColor]="'yellow'"></app-text-container>
+    <app-text-container *ngIf="!completed" class="button" (click)="redirect()" [text]="'Give Up'"
+                        [containerColor]="'red'"></app-text-container>
+    <app-text-container *ngIf="completed" class="button" (click)="finish()" [text]="'Finish'"
+                        [containerColor]="'green'"></app-text-container>
+  </div>
+</div>

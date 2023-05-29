@@ -1,6 +1,6 @@
 <div
   class="flex justify-center h-[100vh] w-[100vw] bg-background bg-no-repeat bg-cover bg-center bg-fixed">
-  <img class="absolute h-full w-full" src="assets/images/lights.gif">
+  <img class="absolute h-full w-full" src="../../../assets/images/lights.gif">
   <div class="bg-c2/[.60] text-c1 p-8 z-50 m-auto text-center rounded">
     <div class="text-[32px]">User Profile</div>
     <div class="mt-4 flex flex-col justify-center items-center" *ngIf="authService.userData as user">
@@ -11,6 +11,10 @@
       <div class="mb-2">UserModel ID: <strong>{{user.uid}}</strong></div>
       <div class="mb-2">Email: <strong>{{user.email}}</strong></div>
       <div class="mb-2">Email Verified: <strong>{{user.emailVerified}}</strong></div>
+      <div *ngFor="let hero of heroes">
+        <div class="mb-2">Hero: <strong>{{hero.name}}</strong></div>
+        <div class="mb-2">Number of completes: <strong>{{hero.numberOfCompletes}}</strong></div>
+      </div>
     </div>
 
     <div class="flex justify-between mt-4">
